@@ -5,17 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agriculturalapp.R
+import com.example.agriculturalapp.adapters.CategoriesAdapter
+import com.example.agriculturalapp.databinding.FragmentCategoriesBinding
+import com.example.agriculturalapp.models.Category
+import com.example.agriculturalapp.models.CategoryItem
+import com.example.agriculturalapp.utils.OnClickCategory
 
 
-class CategoriesFragment : Fragment() {
+class CategoriesFragment : Fragment(), OnClickCategory {
+
+    lateinit var binding: FragmentCategoriesBinding
+    private val adapter = CategoriesAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categories, container, false)
+    ): View {
+        binding = FragmentCategoriesBinding.inflate(layoutInflater)
+
+        return binding.root
     }
 
+    override fun onClickCategory(category: CategoryItem) {
+        TODO("Not yet implemented")
+    }
 }
