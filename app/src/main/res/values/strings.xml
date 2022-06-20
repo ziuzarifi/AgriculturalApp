@@ -30,7 +30,9 @@
     <string name="name">Название</string>
     <string name="price">Стоимость</string>
     <string name="address">Адрес</string>
+    <string name="email">Адрес электронной почты</string>
     <string name="category">Категория</string>
+    <string name="categories">Категории</string>
     <string name="select_photo">Выбрать фото</string>
     <string name="description">Описание</string>
     <!-- TODO: Remove or change this placeholder text -->

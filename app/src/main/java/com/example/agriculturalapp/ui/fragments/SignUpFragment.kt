@@ -5,19 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.agriculturalapp.databinding.FragmentAddingAdsBinding
+import com.example.agriculturalapp.R
 
-class AddingAdsFragment : Fragment() {
 
-    lateinit var binding: FragmentAddingAdsBinding
+class SignUpFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAddingAdsBinding.inflate(layoutInflater)
-        return binding.root
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
-
 
 }

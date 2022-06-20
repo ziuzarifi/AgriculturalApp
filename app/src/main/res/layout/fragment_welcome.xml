@@ -7,7 +7,6 @@
     android:background="@color/main_green"
     tools:context=".ui.fragments.WelcomeFragment">
 
-
     <TextView
         android:id="@+id/tv"
         android:layout_width="match_parent"
