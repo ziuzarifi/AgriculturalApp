@@ -13,13 +13,13 @@
     <string name="age">Возраст</string>
     <string name="location">Место жительства</string>
     <string name="registration">Регистрация</string>
-    <string name="сontinue">Продолжить</string>
     <string name="сreate">Создать</string>
     <string name="tel">Номер телефона</string>
     <string name="dushanbe">Душанбе, Таджикистан</string>
     <string name="popularity">По популярности</string>
     <string name="filters">Фильтры</string>
     <string name="personal_area">Личный кабинет</string>
+    <string name="exit">Выход</string>
     <string name="personal_information">Личная информация</string>
     <string name="basic_information">Основная информация</string>
     <string name="additional_information">Дополнительная информация</string>
@@ -34,7 +34,11 @@
     <string name="category">Категория</string>
     <string name="categories">Категории</string>
     <string name="select_photo">Выбрать фото</string>
+    <string name="dateOfBirthday">День рождения (ГГГГ-ММ-ДД)</string>
+    <string name="con">Продолжить</string>
     <string name="description">Описание</string>
+    <string name="password">Пароль</string>
+    <string name="password2">Повторите пароль</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
