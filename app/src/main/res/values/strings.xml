@@ -28,7 +28,7 @@
     <string name="submit_ads">Подать объявление</string>
     <string name="contact_center">Контакт центр</string>
     <string name="name">Название</string>
-    <string name="price">Стоимость</string>
+    <string name="price">Стоимость:</string>
     <string name="address">Адрес</string>
     <string name="email">Адрес электронной почты</string>
     <string name="category">Категория</string>
