@@ -38,22 +38,22 @@
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@color/mid_grey"
+        android:background="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:id="@+id/tv1"
+        android:id="@+id/tvName"
         android:layout_width="250dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="@color/mid_grey"
         android:textSize="18sp"
         android:textColor="@color/black_text"
         android:textStyle="bold"
-        android:text="Замир Зарипов"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/imView"
@@ -61,31 +61,31 @@
 
 
     <TextView
-        android:id="@+id/tv2"
+        android:id="@+id/tvAge"
         android:layout_width="250dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="20 лет"
         android:textColor="@color/grey"
         android:textSize="14sp"
+        android:background="@color/mid_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/imView"
-        app:layout_constraintTop_toBottomOf="@id/tv1" />
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
 
     <TextView
-        android:id="@+id/tv3"
+        android:id="@+id/tvLocation"
         android:layout_width="250dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="19dp"
         android:textColor="@color/grey"
-        android:text="Душанбе, Таджикистан"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:background="@color/mid_grey"
         app:layout_constraintStart_toEndOf="@id/imView"
-        app:layout_constraintTop_toBottomOf="@id/tv2" />
+        app:layout_constraintTop_toBottomOf="@id/tvAge" />
 
     <View
         android:id="@+id/view"
