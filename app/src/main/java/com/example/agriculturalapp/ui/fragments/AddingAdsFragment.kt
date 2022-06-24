@@ -10,10 +10,9 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentAddingAdsBinding
-import com.example.agriculturalapp.models.CategoryItem
+import com.example.agriculturalapp.models.advertisements.CategoryItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

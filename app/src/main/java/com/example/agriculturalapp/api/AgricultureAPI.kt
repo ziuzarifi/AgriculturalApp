@@ -1,9 +1,10 @@
 package com.example.agriculturalapp.api
 
-import com.example.agriculturalapp.models.CategoryItem
-import com.example.agriculturalapp.models.ProfileUser
+import com.example.agriculturalapp.models.advertisements.CategoryItem
+import com.example.agriculturalapp.models.profile.ProfileUser
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.POST
 
 interface AgricultureAPI {
 
@@ -12,4 +13,7 @@ interface AgricultureAPI {
 
     @GET("profile/show")
     fun getProfileInfo(): Call<ProfileUser>
+
+    @POST("profile/update?_method=PUT")
+    fun updateProfileInfo(): Call<ProfileUser>
 }

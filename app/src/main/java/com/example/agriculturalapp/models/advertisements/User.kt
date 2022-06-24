@@ -1,6 +1,6 @@
-package com.example.agriculturalapp.models
+package com.example.agriculturalapp.models.advertisements
 
-data class Data(
+data class User(
     val address: String,
     val created_at: String,
     val date_of_birth: String,

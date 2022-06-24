@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                     .setTitle("Вы уверены,")
                     .setMessage("что хотите выйти?")
                     .setNegativeButton("Отмена", null)
-                    .setPositiveButton("Да"){ dialogInterface, i ->
+                    .setPositiveButton("Да"){ _, _ ->
                         finish()
                     }
                     .create()

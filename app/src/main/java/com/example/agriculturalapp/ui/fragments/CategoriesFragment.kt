@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agriculturalapp.adapters.CategoriesAdapter
 import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentCategoriesBinding
-import com.example.agriculturalapp.models.CategoryItem
+import com.example.agriculturalapp.models.advertisements.CategoryItem
 import com.example.agriculturalapp.utils.OnClickCategory
 import retrofit2.Call
 import retrofit2.Callback

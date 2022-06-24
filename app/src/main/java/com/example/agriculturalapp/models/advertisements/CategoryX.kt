@@ -1,6 +1,6 @@
-package com.example.agriculturalapp.models
+package com.example.agriculturalapp.models.advertisements
 
-data class CategoryItem(
+data class CategoryX(
     val created_at: String,
     val icon: String,
     val id: Int,

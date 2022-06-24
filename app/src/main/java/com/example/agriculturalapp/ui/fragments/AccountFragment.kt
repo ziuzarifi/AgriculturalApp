@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.agriculturalapp.R
 import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentAccountBinding
-import com.example.agriculturalapp.models.ProfileUser
+import com.example.agriculturalapp.models.profile.ProfileUser
 import com.example.agriculturalapp.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +28,24 @@ class AccountFragment : Fragment() {
     ): View {
         binding = FragmentAccountBinding.inflate(layoutInflater)
         init()
+
+        binding.tvInfo.setOnClickListener {
+            findNavController().navigate(R.id.profileUserFragment)
+        }
+
+        binding.tvExit.setOnClickListener {
+            AlertDialog.Builder(activity!!)
+                .setTitle("Вы уверены,")
+                .setMessage("что хотите выйти?")
+                .setNegativeButton("Отмена", null)
+                .setPositiveButton("Да"){ _, _ ->
+                }
+                .create()
+                .show()
+        }
+
         return binding.root
+
     }
 
     private fun init(){
@@ -55,7 +75,7 @@ class AccountFragment : Fragment() {
                 override fun onFailure(call: Call<ProfileUser>, t: Throwable) {
 
                 }
-
             })
     }
+
 }
