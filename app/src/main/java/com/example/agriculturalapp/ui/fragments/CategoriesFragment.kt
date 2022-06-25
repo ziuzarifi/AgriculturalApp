@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.agriculturalapp.R
 import com.example.agriculturalapp.adapters.CategoriesAdapter
 import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentCategoriesBinding
@@ -58,6 +60,6 @@ class CategoriesFragment : Fragment(), OnClickCategory {
     }
 
     override fun onClickCategory(category: CategoryItem) {
-
+        findNavController().navigate(R.id.adsFragment)
     }
 }
