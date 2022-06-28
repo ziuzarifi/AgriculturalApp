@@ -1,4 +1,4 @@
-package com.example.agriculturalapp.models.profile
+package com.example.agriculturalapp.models.profile.user
 
 data class Data(
     val address: String,

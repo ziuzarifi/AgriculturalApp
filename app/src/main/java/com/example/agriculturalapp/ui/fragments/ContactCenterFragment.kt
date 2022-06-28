@@ -6,30 +6,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agriculturalapp.R
 import com.example.agriculturalapp.adapters.CategoriesAdapter
+import com.example.agriculturalapp.adapters.ContactCenterAdapter
 import com.example.agriculturalapp.api.RetrofitInstance
-import com.example.agriculturalapp.databinding.FragmentCategoriesBinding
+import com.example.agriculturalapp.databinding.FragmentContactCenterBinding
 import com.example.agriculturalapp.models.advertisements.CategoryItem
-import com.example.agriculturalapp.models.advertisements.CategoryX
-import com.example.agriculturalapp.utils.OnClickCategory
+import com.example.agriculturalapp.models.profile.contact_center.ContactCenter
+import com.example.agriculturalapp.models.profile.contact_center.Data
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+class ContactCenterFragment : Fragment() {
 
-class CategoriesFragment : Fragment(), OnClickCategory {
-
-    lateinit var binding: FragmentCategoriesBinding
-    private val adapter = CategoriesAdapter(this)
+    lateinit var binding: FragmentContactCenterBinding
+    private val adapter = ContactCenterAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCategoriesBinding.inflate(layoutInflater)
+        binding = FragmentContactCenterBinding.inflate(layoutInflater)
         init()
         return binding.root
     }
@@ -37,32 +36,29 @@ class CategoriesFragment : Fragment(), OnClickCategory {
     private fun init(){
         val apiInterface = RetrofitInstance.api
 
-        apiInterface.getCategory()
-            .enqueue(object : Callback<List<CategoryItem>>{
-                override fun onResponse(call: Call<List<CategoryItem>>, response: Response<List<CategoryItem>>) {
+        apiInterface.getContactInfo()
+            .enqueue(object : Callback<ContactCenter> {
+                override fun onResponse(call: Call<ContactCenter>, response: Response<ContactCenter>) {
                     if (response.isSuccessful){
-                        Log.d("TAG", "onResponse: ${response.body().toString()}")
+                        Log.d("TAG", "onResponse: ${response.body()}")
+
                         binding.apply {
                             pBar.stopNestedScroll()
                             pBar.visibility = View.GONE
                             rcView.layoutManager = GridLayoutManager(context, 1)
                             rcView.adapter = adapter
                             response.body()?.let {
-                                adapter.setCategory(it)
+                                Log.e("Contacts", "list: $it", )
+                                adapter.setContactInfo(it.data)
                             }
                         }
                     }
                 }
 
-                override fun onFailure(call: Call<List<CategoryItem>>, t: Throwable) {
+                override fun onFailure(call: Call<ContactCenter>, t: Throwable) {
                     binding.pBar.visibility = View.GONE
                 }
             })
     }
 
-    override fun onClickCategory(category: CategoryItem) {
-        val bundle = Bundle()
-        bundle.putInt("id", category.id)
-        findNavController().navigate(R.id.adsFragment)
-    }
 }

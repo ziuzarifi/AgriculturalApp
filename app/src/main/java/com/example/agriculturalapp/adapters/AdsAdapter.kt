@@ -7,9 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.agriculturalapp.R
 import com.example.agriculturalapp.databinding.AdItemBinding
-import com.example.agriculturalapp.databinding.CategoryItemBinding
-import com.example.agriculturalapp.models.advertisements.Ads
-import com.example.agriculturalapp.models.advertisements.CategoryItem
 import com.example.agriculturalapp.models.advertisements.Data
 import com.example.agriculturalapp.utils.Constants
 import com.example.agriculturalapp.utils.OnClickAd
@@ -18,17 +15,17 @@ class AdsAdapter(
     private val onClick: OnClickAd
 ): RecyclerView.Adapter<AdsAdapter.AdsHolder>() {
 
-    private lateinit var adsList: Ads = emptyArray()
+    private var adsList: List<Data> = emptyList()
 
     class AdsHolder(item: View): RecyclerView.ViewHolder(item) {
         private val binding = AdItemBinding.bind(item)
 
-        fun bind(ad: Ads) = with(binding) {
-            tvTitle.text = ad.data.title
-            tvPrice.text = ad.data.price
+        fun bind(ad: Data) = with(binding) {
+            tvTitle.text = ad.title
+            tvPrice.text = ad.price
             Glide
                 .with(imView)
-                .load(Constants.MEDIA_URL + ad.data.images)
+                .load(Constants.MEDIA_URL + ad.images)
                 .into(imView)
         }
     }
@@ -50,7 +47,7 @@ class AdsAdapter(
         return adsList.size
     }
 
-    fun setAd(list: Ads) {
+    fun setAd(list: List<Data>) {
         adsList = list
     }
 }

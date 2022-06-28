@@ -21,43 +21,50 @@ class AdsFragment : Fragment(), OnClickAd {
 
     lateinit var binding: FragmentAdsBinding
     private val adapter = AdsAdapter(this)
+    private var id: Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAdsBinding.inflate(layoutInflater)
-        init()
         return binding.root
     }
 
-    private fun init(){
-        val apiInterface = RetrofitInstance.api
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (arguments?.getInt("id") != null) {
+            id = arguments!!.getInt("id")
+        }
+        init(id = id)
+    }
 
-        apiInterface.getAd()
+    private fun init(id: Int?){
+        val apiInterface = RetrofitInstance.api
+        apiInterface.getAd(category_id = id)
             .enqueue(object : Callback<Ads> {
                 override fun onResponse(call: Call<Ads>, response: Response<Ads>) {
                     if (response.isSuccessful){
                         Log.d("TAG", "onResponse: ${response.body().toString()}")
                         binding.apply {
-//                            pBar.stopNestedScroll()
-//                            pBar.visibility = View.GONE
+                            pBar.stopNestedScroll()
+                            pBar.visibility = View.GONE
                             rcView.layoutManager = GridLayoutManager(context, 1)
                             rcView.adapter = adapter
                             response.body()?.let {
-                                adapter.setAd(it)
+                                adapter.setAd(it.data)
                             }
                         }
                     }
                 }
 
                 override fun onFailure(call: Call<Ads>, t: Throwable) {
-//                    binding.pBar.visibility = View.GONE
+                    binding.pBar.visibility = View.GONE
                 }
             })
     }
 
-    override fun onClickAd(ad: Ads) {
+    override fun onClickAd(ad: Data) {
 
     }
 

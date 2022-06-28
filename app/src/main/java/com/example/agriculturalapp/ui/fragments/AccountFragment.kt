@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.example.agriculturalapp.R
 import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentAccountBinding
-import com.example.agriculturalapp.models.profile.ProfileUser
+import com.example.agriculturalapp.models.profile.user.ProfileUser
 import com.example.agriculturalapp.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,6 +31,10 @@ class AccountFragment : Fragment() {
 
         binding.tvInfo.setOnClickListener {
             findNavController().navigate(R.id.profileUserFragment)
+        }
+
+        binding.tvContactCenter.setOnClickListener {
+            findNavController().navigate(R.id.contactCenterFragment)
         }
 
         binding.tvExit.setOnClickListener {

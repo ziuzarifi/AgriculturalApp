@@ -10,7 +10,7 @@
 
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="56dp"
         android:background="@color/main_green"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -25,7 +25,7 @@
             android:layout_gravity="center"
             android:text="@string/saved"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="27dp" />
