@@ -2,8 +2,9 @@ package com.example.agriculturalapp.utils
 
 class Constants {
     companion object{
-        const val API_KEY = "715|uHgtG7MqoZKgLP1p5O3A3BbcgNM0nGlg1Va58ffP"
+        const val API_KEY = "727|QtIlzZbmgjGb9fOKf9Nzmj2QIZBZKPOK1a9NGBQR"
         const val BASE_URL = "http://api.agricult.colibri.tj/api/"
         const val MEDIA_URL = "http://api.agricult.colibri.tj/public/storage/"
+        const val TAG = "Global"
     }
 }

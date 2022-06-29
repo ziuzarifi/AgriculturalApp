@@ -1,5 +1,6 @@
 package com.example.agriculturalapp.adapters
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.agriculturalapp.R
 import com.example.agriculturalapp.databinding.AdItemBinding
 import com.example.agriculturalapp.models.advertisements.Data
+import com.example.agriculturalapp.ui.fragments.MyAdsFragment.Companion.click
 import com.example.agriculturalapp.utils.Constants
 import com.example.agriculturalapp.utils.OnClickAd
 
@@ -21,8 +23,16 @@ class AdsAdapter(
         private val binding = AdItemBinding.bind(item)
 
         fun bind(ad: Data) = with(binding) {
-            tvTitle.text = ad.title
-            tvPrice.text = ad.price
+            if (!click){
+                tvTitle.text = ad.title
+                tvPrice.text = ad.price
+            }
+            else {
+                tvTitle.text = ad.title
+                tvPrice.text = ad.moderation_status.name
+                tvPrice.setTextColor(Color.parseColor("#FF9800"))
+                tv.text = "Статус"
+            }
             Glide
                 .with(imView)
                 .load(Constants.MEDIA_URL + ad.images)
@@ -50,4 +60,7 @@ class AdsAdapter(
     fun setAd(list: List<Data>) {
         adsList = list
     }
+
+
+
 }

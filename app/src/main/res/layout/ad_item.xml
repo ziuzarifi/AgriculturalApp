@@ -73,10 +73,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.48"
                 app:layout_constraintStart_toEndOf="@+id/imView"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintTop_toBottomOf="@+id/tv" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv"
                 android:layout_width="82dp"
                 android:layout_height="12dp"
                 android:layout_marginTop="28dp"

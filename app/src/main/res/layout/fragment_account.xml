@@ -139,7 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tvMyAds"
         android:layout_width="411dp"
         android:layout_height="60dp"
         android:paddingVertical="19dp"
@@ -158,7 +158,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_ads"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/tvMyAds"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />

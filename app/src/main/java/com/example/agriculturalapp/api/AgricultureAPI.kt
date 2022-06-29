@@ -16,6 +16,9 @@ interface AgricultureAPI {
     @GET("advertisements/categories")
     fun getCategory(): Call<List<CategoryItem>>
 
+    @GET("profile/advertisements")
+    fun getMyAds(): Call<Ads>
+
     @GET("profile/show")
     fun getProfileInfo(): Call<ProfileUser>
 
@@ -23,6 +26,9 @@ interface AgricultureAPI {
     fun getAd(
         @Query("category_id") category_id: Int? = null
     ): Call<Ads>
+
+    @GET("profile/favorites")
+    fun getFavorites(): Call<Ads>
 
     @POST("profile/update?_method=PUT")
     fun updateProfileInfo(): Call<ProfileUser>

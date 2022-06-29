@@ -33,6 +33,12 @@ class AccountFragment : Fragment() {
             findNavController().navigate(R.id.profileUserFragment)
         }
 
+        binding.tvMyAds.setOnClickListener {
+            findNavController().navigate(R.id.myAdsFragment)
+        }
+
+
+
         binding.tvContactCenter.setOnClickListener {
             findNavController().navigate(R.id.contactCenterFragment)
         }

@@ -14,6 +14,7 @@ import com.example.agriculturalapp.api.RetrofitInstance
 import com.example.agriculturalapp.databinding.FragmentCategoriesBinding
 import com.example.agriculturalapp.models.advertisements.CategoryItem
 import com.example.agriculturalapp.models.advertisements.CategoryX
+import com.example.agriculturalapp.utils.Constants.Companion.TAG
 import com.example.agriculturalapp.utils.OnClickCategory
 import retrofit2.Call
 import retrofit2.Callback
@@ -62,7 +63,8 @@ class CategoriesFragment : Fragment(), OnClickCategory {
 
     override fun onClickCategory(category: CategoryItem) {
         val bundle = Bundle()
+        Log.d(TAG, "onClickCategory: $category")
         bundle.putInt("id", category.id)
-        findNavController().navigate(R.id.adsFragment)
+        findNavController().navigate(R.id.adsFragment, bundle)
     }
 }

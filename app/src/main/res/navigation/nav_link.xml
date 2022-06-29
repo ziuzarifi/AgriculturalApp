@@ -57,6 +57,10 @@
         android:id="@+id/contactCenterFragment"
         android:name="com.example.agriculturalapp.ui.fragments.ContactCenterFragment"
         android:label="ContactCenterFragment" />
+    <fragment
+        android:id="@+id/myAdsFragment"
+        android:name="com.example.agriculturalapp.ui.fragments.MyAdsFragment"
+        android:label="MyAdsFragment" />
 
 
 </navigation>
